@@ -14,7 +14,6 @@ namespace ConvertRevitFilesToPdf
             try
             {
                 Document document = commandData.Application.ActiveUIDocument.Document;
-                string name = document.Title;
                 PrintManager printManager = document.PrintManager;
                 printManager.SelectNewPrintDriver("Microsoft Print to PDF");
                 printManager.PrintToFile = true;
