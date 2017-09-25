@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Application">
-    <Name>Tools</Name>
+    <Name>Convert to PDF</Name>
     <Assembly>
-      C:\Users\Pavel Krastev\Documents\visual studio 2015\Projects\ConvertRevitFilesToPdf\ConvertRevitFilesToPdf\obj\Debug\ConvertRevitFilesToPdf.dll
+      ConvertRevitFilesToPdf.dll
     </Assembly>
     <ClientId>502fe383-2648-4e98-adf8-5e6047f9dc34</ClientId>
     <FullClassName>ConvertRevitFilesToPdf.AddButtonToRibbon</FullClassName>

@@ -54,9 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Converter\SaveDocumentAsPdf.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="ConvertRevitFilesToPdf.addin" />
+    <Content Include="Resources\ConvertRevitFilesToPdf.addin" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Resources\convert.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
