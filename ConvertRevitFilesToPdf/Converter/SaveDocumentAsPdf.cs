@@ -13,8 +13,8 @@ namespace ConvertRevitFilesToPdf
         {
             try
             {
-                Document document = commandData.Application.ActiveUIDocument.Document;
-                PrintManager printManager = document.PrintManager;
+                Document CurrentDocument = commandData.Application.ActiveUIDocument.Document;
+                PrintManager printManager = CurrentDocument.PrintManager;
                 printManager.SelectNewPrintDriver("Microsoft Print to PDF");
                 printManager.PrintToFile = true;
                 printManager.CombinedFile = true;
