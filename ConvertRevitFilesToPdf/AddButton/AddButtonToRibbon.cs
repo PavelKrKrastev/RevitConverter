@@ -8,13 +8,13 @@ namespace ConvertRevitFilesToPdf
     public class AddButtonToRibbon : IExternalApplication
     {
         #region Execute on Revit Start and Close
-        public Result OnStartup(UIControlledApplication application)
+        public Result OnStartup(UIControlledApplication Application)
         {
-            AddRibbonPanel(application);
+            AddRibbonPanel(Application);
             return Result.Succeeded;
         }
 
-        public Result OnShutdown(UIControlledApplication application)
+        public Result OnShutdown(UIControlledApplication Application)
         {
             return Result.Succeeded;
             
@@ -22,21 +22,21 @@ namespace ConvertRevitFilesToPdf
         #endregion Execute on Revit Start and Close
 
         #region Add Ribbon to Revit Tab
-        private void AddRibbonPanel(UIControlledApplication application)
+        private void AddRibbonPanel(UIControlledApplication Application)
         {
-            string tabName = "Converter";
-            application.CreateRibbonTab(tabName);
+            string TabName = "Converter";
+            Application.CreateRibbonTab(TabName);
 
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel(tabName, "Convert to PDF");
+            RibbonPanel ConvertRibbonPanel = Application.CreateRibbonPanel(TabName, "Convert to PDF");
 
             string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
-            PushButtonData buttonData = new PushButtonData("cmdSaveDocumentAsPdf",
+            PushButtonData ConvertButtonData = new PushButtonData("cmdSaveDocumentAsPdf",
                "Convert" + System.Environment.NewLine + "to PDF", thisAssemblyPath, "ConvertRevitFilesToPdf.SaveDocumentAsPdf");
 
-            PushButton pushButton = ribbonPanel.AddItem(buttonData) as PushButton;
-            pushButton.ToolTip = "Convert current document to pdf";
+            PushButton ConvertPushButton = ConvertRibbonPanel.AddItem(ConvertButtonData) as PushButton;
+            ConvertPushButton.ToolTip = "Convert current document to pdf";
 
-            pushButton.LargeImage = RibbonButtonImageSource("ConvertRevitFilesToPdf.Resources.convert.png");
+            ConvertPushButton.LargeImage = RibbonButtonImageSource("ConvertRevitFilesToPdf.Resources.convert.png");
         }
         #endregion Add Ribbon to Revit Tab
 
